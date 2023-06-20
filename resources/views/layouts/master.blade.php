@@ -24,7 +24,11 @@
       <!-- /.content-header -->
 
       <!-- Main content -->
-      @include('layouts.content')
+      <section class="content">
+        <section class="container-fluid">
+          <h1>Turu aja dek aowkoakwok</h1>
+        </section>
+      </section>
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
