@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FarmPlace;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ManageUserController extends Controller
@@ -11,7 +13,9 @@ class ManageUserController extends Controller
      */
     public function index()
     {
-        return view('pages.ManageUser');
+        $user = User::all();
+        $dataFarmPlace = FarmPlace::all();
+        return view('pages.ManageUser.index', compact('user', 'dataFarmPlace'));
     }
 
     /**
@@ -19,7 +23,8 @@ class ManageUserController extends Controller
      */
     public function create()
     {
-        //
+        $dataFarmPlace = FarmPlace::all();
+        return view('pages.ManageUser.create', compact('dataFarmPlace'));
     }
 
     /**
@@ -27,7 +32,23 @@ class ManageUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'farm_place_id' => 'required',
+            'email' => 'required|unique:users,email',
+            'password' => 'required',
+            'role' => 'required',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'farm_place_id' => $request->farm_place_id,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'role' => $request->role,
+        ]);
+
+        return redirect()->route('user.index')->with('success', 'User berhasil ditambahkan');
     }
 
     /**
@@ -43,7 +64,9 @@ class ManageUserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = User::findOrFail($id);
+        $dataFarmPlace = FarmPlace::all();
+        return view('pages.ManageUser.update', compact('data', 'dataFarmPlace'));
     }
 
     /**
@@ -51,7 +74,24 @@ class ManageUserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'farm_place_id' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'role' => 'required',
+        ]);
+
+        $user = User::findOrFail($id);
+        $user->update([
+            'name' => $request->name,
+            'farm_place_id' => $request->farm_place_id,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'role' => $request->role,
+        ]);
+
+        return redirect()->route('user.index')->with('success', 'User berhasil diupdate');
     }
 
     /**
@@ -59,6 +99,9 @@ class ManageUserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('user.index')->with('success', 'User berhasil dihapus');
     }
 }
