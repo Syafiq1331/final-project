@@ -7,7 +7,7 @@
 <div class="col-md-12">
   <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Bordered Table</h3>
+      <h3 class="card-title">Field list Table</h3>
     </div>
     @if(session('success'))
       <div id="success-message" class="alert alert-success">
@@ -15,9 +15,9 @@
       </div>
     @endif
     <!-- /.card-header -->
-    <div class="card-body">
+    <div class="card-body table-responsive">
       <a href="{{ route('field.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
-      <table class="table table-bordered">
+      <table class="table table-bordered border-top">
         <thead>
           <tr>
             <th>No</th>
