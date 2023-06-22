@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <h1>Turu aja dek</h1>
+  <a href="/dashboard">Kembali ke halaman login</a>
 </body>
 
 </html>

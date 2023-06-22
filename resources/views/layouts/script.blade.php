@@ -32,3 +32,14 @@
   <script src="{{asset('AdminLTE')}}/dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="{{asset('AdminLTE')}}/dist/js/pages/dashboard.js"></script>
+
+  <script>
+    setTimeout(function() {
+        var successMessage = document.getElementById('success-message');
+        successMessage.classList.add('hide-message');
+        setTimeout(function() {
+            successMessage.style.display = 'none';
+        }, 500); // Waktu tambahan sebelum menghapus elemen (dalam milidetik)
+    }, 3000); // Mengatur waktu tampilan pesan (dalam milidetik)
+</script>
+

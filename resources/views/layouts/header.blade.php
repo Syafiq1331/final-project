@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Farmku | Dashboard</title>
+  <title>@yield('title')</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,4 +26,16 @@
   <link rel="stylesheet" href="{{asset('AdminLTE')}}/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('AdminLTE')}}/plugins/summernote/summernote-bs4.min.css">
+  <!-- Icon Laravel -->
+  <!-- <link rel="shortcut icon" href="{{asset('')}}/" type="image/x-icon"> -->
+  <style>
+    #success-message {
+        transition: opacity 0.5s ease-out;
+    }
+
+    .hide-message {
+        opacity: 0;
+    }
+</style>
+
 </head>

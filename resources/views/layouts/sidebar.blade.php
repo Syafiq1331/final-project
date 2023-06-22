@@ -10,12 +10,28 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-header">EXAMPLES</li>
         <li class="nav-item">
-          <a href="pages/calendar.html" class="nav-link">
-            <i class="nav-icon fa-solid fa-farm"></i>
+          <a href="/dashboard" class="nav-link">
+            <i class="nav-icon far fa-house"></i>
             <p>
-              Calendar
+              Home
+            </p>
+          </a>
+        </li>
+        <li class="nav-header">Manage Farm</li>
+        <li class="nav-item">
+          <a href="manage/user" class="nav-link">
+            <i class="nav-icon far fa-user"></i>
+            <p>
+              Manage User
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="manage/field" class="nav-link">
+            <i class="nav-icon far fa-user-alt"></i>
+            <p>
+              Manage Field
             </p>
           </a>
         </li>

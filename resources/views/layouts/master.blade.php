@@ -1,5 +1,7 @@
 @include('layouts.header')
 
+@section('title', 'Manage Field')
+
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
     <!-- Navbar -->
@@ -16,7 +18,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Dashboard</h1>
+              
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -24,11 +26,7 @@
       <!-- /.content-header -->
 
       <!-- Main content -->
-      <section class="content">
-        <section class="container-fluid">
-          <h1>Turu aja dek aowkoakwok</h1>
-        </section>
-      </section>
+      @include('layouts.content')
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
