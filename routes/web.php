@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ManageUserController;
+use App\Http\Controllers\ManageFieldController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master');
-});
+
+Route::resource('/dashboard', HomeController::class);
+Route::resource('/manage/user', ManageUserController::class);
+Route::resource('/manage/field', ManageFieldController::class);
+
+
 
 Route::fallback(function () {
     return view('404');
