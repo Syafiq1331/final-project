@@ -12,6 +12,17 @@ class JenisLahanSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $jenisLahan = [
+            [
+                'jenis' => 'Sawah',
+                'desc' => 'Lahan yang digunakan untuk menanam padi',
+            ],
+        ];
+
+        foreach ($jenisLahan as $jenis) {
+            \App\Models\JenisLahan::create($jenis);
+        }
+
+        $this->command->info('Berhasil menambahkan data jenis lahan');
     }
 }
