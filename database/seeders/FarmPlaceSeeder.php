@@ -14,25 +14,26 @@ class FarmPlaceSeeder extends Seeder
     {
         $FarmPlace = [
             [
-                'name' => 'Farm Place 1',
-                'address' => 'Jl. Farm Place 1',
+                'name' => 'Cilangkap Farm',
+                'address' => 'Jl. Cilangkap Raya No. 1, Cilangkap, Jakarta Timur',
             ],
             [
-                'name' => 'Farm Place 2',
-                'address' => 'Jl. Farm Place 2',
+                'name' => 'Cibubur Farm',
+                'address' => 'Jl. Cibubur Raya No. 1, Cibubur, Jakarta Timur',
             ],
             [
-                'name' => 'Farm Place 3',
-                'address' => 'Jl. Farm Place 3',
+                'name' => 'Cipayung Farm',
+                'address' => 'Jl. Cipayung Raya No. 1, Cipayung, Jakarta Timur',
             ],
             [
-                'name' => 'Farm Place 4',
-                'address' => 'Jl. Farm Place 4',
+                'name' => 'Ciracas Farm',
+                'address' => 'Jl. Ciracas Raya No. 1, Ciracas, Jakarta Timur',
             ],
             [
-                'name' => 'Farm Place 5',
-                'address' => 'Jl. Farm Place 5',
-            ],
+                'name' => 'Cijantung Farm',
+                'address' => 'Jl. Cijantung Raya No. 1, Cijantung, Jakarta Timur',
+            ]
+
         ];
 
         foreach ($FarmPlace as $key => $value) {
