@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.header')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+@section('title', 'Page not found')
+<body style="display: grid; place-items: center; height: 100vh;">
+  <section class="content">
+    <div class="error-page">
+      <h2 class="headline text-warning"> 404</h2>
 
-<body>
-  <a href="/dashboard">Kembali ke halaman login</a>
+      <div class="error-content">
+        <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
+        <p>
+          We could not find the page you were looking for.
+          Meanwhile, you may <a href="/login">return to login page</a>
+        </p>
+      </div>
+      <!-- /.error-content -->
+    </div>
+    <!-- /.error-page -->
+  </section>
 </body>
 
 </html>
