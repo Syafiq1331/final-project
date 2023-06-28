@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('desc')->nullable()->default(null);
-            $table->string('img')->nullable()->default(null);
+            $table->string('image')->nullable()->default(null);
             $table->string('plantTime')->nullable()->default(null);
             $table->string('harvestTime')->nullable()->default(null);
             $table->foreignId('farm_place_id')->nullable()->constrained('farm_place')->nullOnDelete();
