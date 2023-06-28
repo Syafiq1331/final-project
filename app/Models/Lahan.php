@@ -10,16 +10,22 @@ class Lahan extends Model
     use HasFactory;
 
     protected $table = 'lahan';
+    public $timestamps = true;
 
     protected $fillable = [
         'id',
-        'nama',
-        'luas',
-        'alamat',
-        'deskripsi',
-        'foto',
-        'farmPlace_id',
+        'name',
+        'desc',
+        'image',
+        'plantTime',
+        'harvestTime',
+        'jenisLahan_id',
+        'farm_place_id',
+        'created_at',
+        'updated_at',
     ];
+
+    protected $dateFormat = 'Y-m-d H:i:s';
 
     public function farmPlace()
     {
