@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('image')->nullable();
             $table->string('password');
-            $table->string('role', 20)->default('user');
+            $table->string('role')->notnullable();
             $table->rememberToken();
             $table->timestamps();
             $table->foreignId('farm_place_id')->nullable()->constrained('farm_place')->nullOnDelete();

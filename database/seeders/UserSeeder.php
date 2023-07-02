@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'User',
-                'email' => 'user@gmai.com',
+                'email' => 'user@gmail.com',
                 'password' => bcrypt('user'),
                 'role' => 'user',
                 'farm_place_id' => 1,
