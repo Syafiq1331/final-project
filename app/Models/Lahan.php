@@ -25,6 +25,13 @@ class Lahan extends Model
         'updated_at',
     ];
 
+    protected $hidden = [
+        'jenisLahan_id',
+        'farm_place_id',
+        'created_at',
+        'updated_at',
+    ];
+
     protected $dateFormat = 'Y-m-d H:i:s';
 
     public function farmPlace()

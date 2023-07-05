@@ -35,6 +35,11 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password',
         'remember_token',
+        'jenisLahan_id',
+        'created_at',
+        'updated_at',
+        'email_verified_at',
+        'role'
     ];
 
     /**
@@ -46,6 +51,11 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function setRoleAttribute($value)
+    {
+        $this->attributes['role'] = strtolower($value);
+    }
 
     public function farmPlace()
     {
