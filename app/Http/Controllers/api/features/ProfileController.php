@@ -13,7 +13,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $user = auth()->user()->makeHidden(['jenisLahan_id', 'created_at', 'updated_at', 'email_verified_at', 'role']);
+        $user = auth()->user();
         return response()->json([
             'success' => true,
             'message' => 'Berhasil menampilkan data profile',
@@ -52,8 +52,6 @@ class ProfileController extends Controller
             'farm_place_id' => $farmPlaceId,
             'password' => bcrypt($request->password),
         ]);
-
-        $profile->makeHidden(['created_at', 'updated_at', 'email_verified_at', 'role', 'image']);
 
         return new LahanResource(true, 'Berhasil menambahkan data lahan', $profile);
     }
@@ -106,8 +104,6 @@ class ProfileController extends Controller
                 'password' => bcrypt($request->password),
             ]);
         }
-
-        $profile->makeHidden(['created_at', 'updated_at', 'email_verified_at', 'role', 'image']);
 
         return new LahanResource(true, 'Berhasil mengubah data profile', $profile);
     }
