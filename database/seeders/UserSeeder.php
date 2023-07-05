@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'User',
                 'email' => 'user@gmail.com',
-                'password' => bcrypt('user'),
+                'password' => bcrypt('userbaru'),
                 'role' => 'user',
                 'farm_place_id' => 1,
             ],
