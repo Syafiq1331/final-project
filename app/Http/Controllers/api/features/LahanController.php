@@ -15,7 +15,7 @@ class LahanController extends Controller
 {
     public function index()
     {
-        $lahan = Lahan::latest()->paginate(5)->makeHidden(['jenisLahan_id', 'farm_place_id', 'created_at', 'updated_at']);
+        $lahan = Lahan::latest()->paginate(5);
         return new LahanResource(true, 'Berhasil menampilkan data lahan', $lahan);
     }
 
@@ -53,7 +53,7 @@ class LahanController extends Controller
 
     public function show($id)
     {
-        $lahan = Lahan::find($id)->makeHidden(['jenisLahan_id', 'farm_place_id', 'created_at', 'updated_at']);
+        $lahan = Lahan::find($id);
         if ($lahan) {
             return new LahanResource(true, 'Berhasil menampilkan data lahan', $lahan);
         } else {
