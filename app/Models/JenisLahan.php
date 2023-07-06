@@ -18,15 +18,13 @@ class JenisLahan extends Model
         'desc',
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function lahan()
     {
         return $this->hasMany(Lahan::class);
-    }
-
-    protected function image(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($image) => asset("storage/lahanImage/'. $image"),
-        );
     }
 }
