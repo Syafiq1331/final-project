@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             FarmPlaceSeeder::class,
             UserSeeder::class,
             JenisLahanSeeder::class,
+            LahanSeeder::class,
         ]);
     }
 }
