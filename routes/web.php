@@ -23,9 +23,6 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
-
-
-
 Route::fallback(function () {
     return view('404');
 });
