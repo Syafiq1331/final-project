@@ -5,7 +5,7 @@ namespace App\Http\Controllers\api\features;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Http\Resources\LahanResource;
+use App\Http\Resources\MetaResource;
 use App\Models\Lahan;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -16,7 +16,7 @@ class LahanController extends Controller
     public function index()
     {
         $lahan = Lahan::latest()->paginate(5);
-        return new LahanResource(true, 'Berhasil menampilkan data lahan', $lahan);
+        return new MetaResource(true, 'Berhasil menampilkan data lahan', $lahan);
     }
 
     public function store(Request $request)
@@ -48,16 +48,16 @@ class LahanController extends Controller
             'farm_place_id' => $request->farm_place_id,
         ]);
 
-        return new LahanResource(true, 'Berhasil menambahkan data lahan', $lahan);
+        return new MetaResource(true, 'Berhasil menambahkan data lahan', $lahan);
     }
 
     public function show($id)
     {
         $lahan = Lahan::find($id);
         if ($lahan) {
-            return new LahanResource(true, 'Berhasil menampilkan data lahan', $lahan);
+            return new MetaResource(true, 'Berhasil menampilkan data lahan', $lahan);
         } else {
-            return new LahanResource(false, 'Data lahan tidak ditemukan', null);
+            return new MetaResource(false, 'Data lahan tidak ditemukan', null);
         }
     }
 
@@ -107,7 +107,7 @@ class LahanController extends Controller
             ]);
         }
 
-        return new LahanResource(true, 'Berhasil mengubah data lahan', $lahan);
+        return new MetaResource(true, 'Berhasil mengubah data lahan', $lahan);
     }
 
     public function destroy($id)
@@ -118,9 +118,9 @@ class LahanController extends Controller
             Storage::delete('public/lahanImages/' . basename($lahan->image));
 
             $lahan->delete();
-            return new LahanResource(true, 'Berhasil menghapus data lahan', null);
+            return new MetaResource(true, 'Berhasil menghapus data lahan', null);
         } else {
-            return new LahanResource(false, 'Data lahan tidak ditemukan', null);
+            return new MetaResource(false, 'Data lahan tidak ditemukan', null);
         }
     }
 }
