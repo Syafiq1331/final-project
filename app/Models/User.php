@@ -39,7 +39,10 @@ class User extends Authenticatable implements JWTSubject
         'created_at',
         'updated_at',
         'email_verified_at',
-        'role'
+        'role',
+        'farm_place_id',
+        // 'farm_place.created_at'
+        // 'FarmPlace, farm_place_id'
     ];
 
     /**
@@ -59,7 +62,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function farmPlace()
     {
-        return $this->hasOne(FarmPlace::class);
+        return $this->hasOne(FarmPlace::class, 'id', 'farm_place_id');
     }
 
     public function getJWTIdentifier()
